@@ -55,14 +55,20 @@ On Ubuntu Jammy
 1. Install ROS dependencies
 
     ```
+    sudo apt install python3-rosdep2
     sudo rosdep init
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y -i
     ```
-
+1. Get actuator_msgs package
+   ```
+   cd ~/template_ws/src/ros_gz_project_template
+   git clone https://github.com/rudislabs/actuator_msgs.git
+   ```
 1. Build and install
 
     ```
+    source /opt/ros/humble/setup.bash
     cd ~/template_ws
     colcon build --cmake-args -DBUILD_TESTING=ON
     ```
